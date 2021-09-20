@@ -9,25 +9,25 @@ import javax.persistence.NamedQuery;
 
 
 @Entity
-@NamedQuery(name = "RenameMe.deleteAllRows", query = "DELETE from RenameMe")
-public class RenameMe implements Serializable {
+@NamedQuery(name = "RenameMe.deleteAllRows", query = "DELETE from Movie")
+public class Movie implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    public RenameMe() {
+    public Movie() {
     }  
     
     // TODO, delete this class, or rename to an Entity class that makes sense for what you are about to do
     // Delete EVERYTHING below if you decide to use this class, it's dummy data used for the initial demo
-    private String dummyStr1;
-    private String dummyStr2;
+    private String title;
+    private String author;
 
-    public RenameMe(String dummyStr1, String dummyStr2) {
-        this.dummyStr1 = dummyStr1;
-        this.dummyStr2 = dummyStr2;
+    public Movie(String title, String author) {
+        this.title = title;
+        this.author = author;
     }
 
     public Long getId() {
@@ -38,20 +38,20 @@ public class RenameMe implements Serializable {
         this.id = id;
     }
     
-    public String getDummyStr1() {
-        return dummyStr1;
+    public String getTitle() {
+        return title;
     }
 
-    public void setDummyStr1(String dummyStr1) {
-        this.dummyStr1 = dummyStr1;
+    public void setTitle(String dummyStr1) {
+        this.title = dummyStr1;
     }
 
-    public String getDummyStr2() {
-        return dummyStr2;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setDummyStr2(String dummyStr2) {
-        this.dummyStr2 = dummyStr2;
+    public void setAuthor(String dummyStr2) {
+        this.author = dummyStr2;
     }
     
     

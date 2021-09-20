@@ -5,7 +5,8 @@
  */
 package dtos;
 
-import entities.RenameMe;
+import entities.Movie;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,28 +14,28 @@ import java.util.List;
  *
  * @author tha
  */
-public class RenameMeDTO {
+public class MovieDTO {
     private long id;
     private String str1;
     private String str2;
 
-    public RenameMeDTO(String dummyStr1, String dummyStr2) {
+    public MovieDTO(String dummyStr1, String dummyStr2) {
         this.str1 = dummyStr1;
         this.str2 = dummyStr2;
     }
     
-    public static List<RenameMeDTO> getDtos(List<RenameMe> rms){
-        List<RenameMeDTO> rmdtos = new ArrayList();
-        rms.forEach(rm->rmdtos.add(new RenameMeDTO(rm)));
+    public static List<MovieDTO> getDtos(List<Movie> rms){
+        List<MovieDTO> rmdtos = new ArrayList();
+        rms.forEach(rm->rmdtos.add(new MovieDTO(rm)));
         return rmdtos;
     }
 
 
-    public RenameMeDTO(RenameMe rm) {
+    public MovieDTO(Movie rm) {
         if(rm.getId() != null)
             this.id = rm.getId();
-        this.str1 = rm.getDummyStr1();
-        this.str2 = rm.getDummyStr2();
+        this.str1 = rm.getTitle();
+        this.str2 = rm.getAuthor();
     }
 
     public String getDummyStr1() {
